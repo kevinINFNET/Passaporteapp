@@ -1,0 +1,25 @@
+﻿@page
+@model PessoaPassaporteApp.Pages.Pessoas.IndexModel
+@{
+    ViewData["Title"] = "Lista de Pessoas e Passaportes";
+}
+
+<h2>Lista de Pessoas e seus Passaportes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Passaporte</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pessoa in Model.Pessoas)
+        {
+            <tr>
+                <td>@pessoa.Nome</td>
+                <td>@pessoa.Passaporte?.Numero ?? "Sem Passaporte"</td>
+            </tr>
+        }
+    </tbody>
+</table>
